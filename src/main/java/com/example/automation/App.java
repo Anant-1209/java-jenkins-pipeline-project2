@@ -3,11 +3,11 @@ package com.example.automation;
 import java.util.logging.Logger;
 
 public class App {
-    private static final Logger logger = Logger.getLogger(App.class.getName());
+    private static final Logger LOG = Logger.getLogger(App.class.getName());
     public static final String GREETING_MESSAGE = "Hello World!";
 
     public static void main(String[] args) {
-        logger.info(GREETING_MESSAGE);
+        LOG.info(GREETING_MESSAGE);
         if (args.length > 0 && "test".equals(args[0])) {
             runTests();
         }
@@ -19,7 +19,7 @@ public class App {
         if (!expectedOutput.equals(actualOutput)) {
             throw new AssertionError("Test failed: Output mismatch!");
         } else {
-            logger.info("Test passed: Output matches.");
+            LOG.info("Test passed: Output matches.");
         }
     }
 
