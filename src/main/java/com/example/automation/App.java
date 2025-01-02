@@ -22,11 +22,8 @@ public class App {
         String expectedOutput = GREETING_MESSAGE;
         String actualOutput = getGreeting();
 
-        if (!expectedOutput.equals(actualOutput)) {
-            throw new AssertionError("Test failed: Output mismatch!");
-        } else {
-            LOG.info("Test passed: Output matches.");
-        }
+        assert expectedOutput.equals(actualOutput) : "Test failed: Output mismatch!";
+        LOG.info("Test passed: Output matches.");
     }
 
     /**
@@ -45,12 +42,9 @@ public class App {
      * @return a welcome message.
      */
     public String welcomeMessage(String name) {
-        String message;
         if (name != null && !name.isEmpty()) {
-            message = "Hello, " + name + "!";
-        } else {
-            message = "Hello, Guest!";
+            return "Hello, " + name + "!";
         }
-        return message;
+        return "Hello, Guest!";
     }
 }
