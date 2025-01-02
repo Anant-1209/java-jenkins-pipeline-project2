@@ -38,8 +38,9 @@ class LoginAutomationTest {
         passwordField.sendKeys("admin123");
         loginButton.click();
 
-        // Removed problematic test for "welcome" message
-        // No validation of the "welcome" message
+        // Validate successful login by checking if the user profile is visible
+        WebElement welcomeMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("welcome")));
+        assertTrue(welcomeMessage.isDisplayed(), "Login should lead to a successful welcome page.");
     }
 
     @AfterAll
