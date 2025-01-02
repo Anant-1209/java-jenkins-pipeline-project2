@@ -3,7 +3,7 @@ package com.example.automation;
 import java.util.logging.Logger;
 
 public class App {
-    // Logger initialized with the correct format
+
     private static final Logger LOG = Logger.getLogger(App.class.getName());
     public static final String GREETING_MESSAGE = "Hello World!";
 
