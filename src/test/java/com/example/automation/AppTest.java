@@ -1,8 +1,6 @@
 package com.example.automation;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
@@ -15,13 +13,20 @@ class AppTest {
         assertEquals(expected, actual, "Greeting should match the default message.");
     }
 
-    @ParameterizedTest
-    @ValueSource(strings = { "Anant", "" })
-    void testWelcomeMessage(String name) {
+    @Test
+    void testWelcomeMessage() {
         App app = new App();
-        String expected = name.isEmpty() ? "Hello, Guest!" : "Hello, " + name + "!";
-        String actual = app.welcomeMessage(name);
-        assertEquals(expected, actual, "Welcome message should handle different names correctly.");
+        String expected = "Hello, Anant!";
+        String actual = app.welcomeMessage("Anant");
+        assertEquals(expected, actual, "Welcome message should greet the user correctly.");
+    }
+
+    @Test
+    void testWelcomeMessageWithEmptyName() {
+        App app = new App();
+        String expected = "Hello, Guest!";
+        String actual = app.welcomeMessage("");
+        assertEquals(expected, actual, "Welcome message should handle empty names correctly.");
     }
 
     @Test

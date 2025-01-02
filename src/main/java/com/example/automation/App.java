@@ -1,20 +1,23 @@
 package com.example.automation;
 
-import java.util.logging.Logger;
-
 public class App {
     public static final String GREETING_MESSAGE = "Hello World!";
-    private static final Logger logger = Logger.getLogger(App.class.getName());
 
     public static void main(String[] args) {
-        logger.info(GREETING_MESSAGE);
+        System.out.println(GREETING_MESSAGE);
         if (args.length > 0 && "test".equals(args[0])) {
             runTests();
         }
     }
 
     public static void runTests() {
-        logger.info("Test passed: Output matches.");
+        String expectedOutput = GREETING_MESSAGE;
+        String actualOutput = getGreeting();
+        if (!expectedOutput.equals(actualOutput)) {
+            throw new AssertionError("Test failed: Output mismatch!");
+        } else {
+            System.out.println("Test passed: Output matches.");
+        }
     }
 
     public static String getGreeting() {
