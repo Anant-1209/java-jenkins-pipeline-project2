@@ -1,5 +1,25 @@
 package com.example.automation;
 
+/**
+ * The App class serves as the entry point for the application.
+ * It contains the main method for running the application, along with methods for handling greeting messages and running tests.
+ * 
+ * This class uses a logger to log messages and provides functionality for:
+ * 1. Displaying a greeting message ("Hello World!").
+ * 2. Running a test to verify the greeting message.
+ * 3. Generating a personalized welcome message based on a user's name.
+ * 
+ * Usage:
+ * - To run the main application, execute the main method.
+ * - To run tests, provide "test" as a command-line argument.
+ * 
+ * Dependencies:
+ * - Uses java.util.logging.Logger for logging.
+ * 
+ * @author [Your Name]
+ * @version 1.0
+ * @since 2025-01-03
+ */
 import java.util.logging.Logger;
 
 public class App {
