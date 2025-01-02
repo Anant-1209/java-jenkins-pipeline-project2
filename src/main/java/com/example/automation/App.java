@@ -44,9 +44,12 @@ public class App {
    * @return a welcome message.
    */
   public String welcomeMessage(String name) {
-    if (name != null && !name.isEmpty()) {
+    if (name != null && !name.isEmpty()) 
+    {
       return "Hello, " + name + "!";
-    } else {
+    } 
+    else 
+    {
       return "Hello, Guest!";
     }
   }
